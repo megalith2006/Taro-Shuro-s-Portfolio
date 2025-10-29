@@ -5,25 +5,23 @@
     padding: 0;
 }
 
-li {
-    list-style: none;
-}
-
 a {
     text-decoration: none;
 }
 
 .clear {
-    clear: left;
+    clear: both;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 header {
     background-color: #000000CC;
     height: 80px;
-}
-
-.header-container {
-    background-color: #000000CC;
     line-height: 80px;
     position: fixed;
     width: 100%;
@@ -49,6 +47,7 @@ header {
     float: left;
     font-size: 16px;
     font-weight: bold;
+    list-style: none;
     padding: 0 20px;
 }
 
@@ -56,14 +55,10 @@ header {
     color: #FFFFFF;
 }
 
-.claer {
-    clear: left;
-    clear: right;
-}
-
 .main-image {
     background-image: url(images/main.jpg);
-    background-position: 50% 44%;
+    background-position: center;
+    background-size: cover;
     height: 40vh;
 }
 
@@ -75,15 +70,13 @@ header {
 
 .main-title {
     color: #4B52A7;
+    font-size: 24px;
     padding-top: 80px;
     text-align: center;
 }
 
-.main-title-jp {
-    font-size: 24px;
-}
-
-.main-title-en {
+.main-title span {
+    display: block;
     font-size: 14px;
     padding-top: 6px;
 }
@@ -110,6 +103,7 @@ header {
 }
 
 .introduction-image img {
+    vertical-align: bottom;
     width: 100%;
 }
 
@@ -127,46 +121,53 @@ header {
 .item-title {
     border-bottom: 1px solid #FFFFFF;
     color: #FFFFFF;
+    font-size: 16px;
     margin: 0 10px;
     padding-bottom: 10px;
     padding-top: 20px;
     text-align: center;
 }
 
-.item-title-jp {
-    font-size: 16px;
-}
-
-.item-title-en {
+.item-title span {
+    display: block;
     font-size: 12px;
     padding-top: 3px;
 }
 
 .item-list {
-    color: #FEFFC7;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 30px;
     padding-bottom: 20px;
     padding-left: 30px;
     padding-top: 20px;
 }
 
-.item-list a {
+.item-list li {
+    color: #FEFFC7;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    list-style-position: inside;
+}
+
+.item-list li::marker {
+    content: "・";
+}
+
+.item-list-web li {
+    color: #FFE8F6;
+}
+
+.item-list-web a {
     color: #FFE8F6;
 }
 
 .sub-title {
     border-bottom: 1px solid #B7B7B7;
     color: #32839C;
+    font-size: 16px;
     margin-bottom: 40px;
     padding-bottom: 3px;
     padding-top: 80px;
     text-align: center;
-}
-
-.sub-title h3 {
-    font-size: 16px;
 }
 
 .gallery {
@@ -199,13 +200,10 @@ header {
 }
 
 .contact {
+    font-size: 16px;
     margin: 0 auto;
     max-width: 90%;
     width: 600px;
-}
-
-.contact p {
-    font-size: 16px;
 }
 
 .required {
@@ -219,7 +217,7 @@ header {
     line-height: 24px;
     margin-right: 10px;
     padding: 0 8px;
-    text-align: center;
+    vertical-align: bottom;
 }
 
 .input {
@@ -276,9 +274,6 @@ footer p {
 @media (max-width: 768px) {
     header {
         height: 48px;
-    }
-
-    .header-container {
         line-height: 48px;
     }
 
@@ -292,7 +287,6 @@ footer p {
 
     .main-image {
         background-image: url(images/main_sp.jpg);
-        background-position: 60% 60%;
         height: 100vh;
     }
 
@@ -300,13 +294,18 @@ footer p {
         width: 90%;
     }
 
-    .main-title-jp {
+    .main-title {
         font-size: 20px;
     }
 
-    .main-title-en {
+    .main-title span {
         font-size: 12px;
         padding-top: 4px;
+    }
+
+    .introduction {
+        max-width: 100%;
+        width: 100%;
     }
 
     .introduction-text {
@@ -322,23 +321,15 @@ footer p {
     }
 
     .item {
-        margin: 0 auto;
-        width: 90%;
+        width: 100%;
     }
 
     .item-favorie {
         margin-bottom: 10px;
     }
 
-    .sub-title {
-        margin: 0 auto;
-        margin-bottom: 40px;
-        width: 90%;
-    }
-
     .gallery {
-        margin: 0 auto;
-        width: 90%;
+        width: 100%;
     }
 
     .gallery-element {
@@ -349,8 +340,21 @@ footer p {
         padding-bottom: 20px;
     }
 
+    .gallery-caption-last {
+        padding-bottom: 0;
+    }
+
+    .contact {
+        max-width: 100%;
+        width: 100%;
+    }
+
     .contact p {
         font-size: 14px;
+    }
+
+    .button {
+        max-width: 100%;
     }
 
     .send {

@@ -33,9 +33,9 @@
 
                 for (let n = 0; n < 4; n++) {
                     if (number[n] % 2 == 0) {
-                        console.log(`${number[n]}は偶数です。7で割ったあまりは${number[n] % 7}です`);
+                        console.log(`${number[n]}は偶数です。7で割ったあまりは${number[n] % 7}です。`);
                     } else {
-                        console.log(`${number[n]}は奇数です。7で割ったあまりは${number[n] % 7}です`);
+                        console.log(`${number[n]}は奇数です。7で割ったあまりは${number[n] % 7}です。`);
                     }
                 }
             };
@@ -47,23 +47,18 @@
 
 <body>
     <header>
-        <div class="header-container">
-            <h1 class="header-title"><span>T</span>aro Shuro's Portfolio</h1>
-            <ul class="header-menu">
-                <li><a href="#introduction">自己紹介</a></li>
-                <li><a href="#sample">実装サンプル</a></li>
-            </ul>
-            <div class="clear"></div>
-        </div>
+        <h1 class="header-title"><span>T</span>aro Shuro's Portfolio</h1>
+        <ul class="header-menu clearfix">
+            <li><a href="#introduction">自己紹介</a></li>
+            <li><a href="#sample">実装サンプル</a></li>
+        </ul>
+        <div class="clear"></div>
     </header>
     <div class="main-image"></div>
     <div class="container">
         <div id="introduction">
             <div class="introduction">
-                <div class="main-title">
-                    <h2 class="main-title-jp">自己紹介</h2>
-                    <h2 class="main-title-en">Self Introduction</h2>
-                </div>
+                <h2 class="main-title">自己紹介<span>Self Introduction</span></h2>
                 <div class="introduction-text">
                     <p>私の名前は<span>就労太郎</span>です。アメリカ合衆国出身で現在はディーキャリアITエキスパートにて、プログラミング学習に取り組んでおります。</p>
                     <p>どうぞよろしくお願いいたします。</p>
@@ -74,38 +69,27 @@
             </div>
             <div class="flex">
                 <div class="item item-favorie">
-                    <div class="item-title">
-                        <h3 class="item-title-jp">好きなもの・趣味</h3>
-                        <h3 class="item-title-en">Favorites</h3>
-                    </div>
+                    <h3 class="item-title">好きなもの・趣味<span>Favorites</span></h3>
                     <ul class="item-list">
-                        <li>・スポーツ観戦</li>
-                        <li>・読書</li>
-                        <li>・アウトドア</li>
+                        <li>スポーツ観戦</li>
+                        <li>読書</li>
+                        <li>アウトドア</li>
                     </ul>
                 </div>
                 <div class="item">
-                    <div class="item-title">
-                        <h3 class="item-title-jp">Webサイト</h3>
-                        <h3 class="item-title-en">Web sites</h3>
-                    </div>
-                    <ul class="item-list">
-                        <li><a href="https://dd-career.com/" target="_blank" rel="noreferrer noopener">・ディーキャリア</a></li>
-                        <li><a href="https://www.google.com/" target="_blank" rel="noreferrer noopener">・Google</a></li>
-                        <li><a href="https://www.yahoo.co.jp/" target="_blank" rel="noreferrer noopener">・Yahoo!
+                    <h3 class="item-title">Webサイト<span>Web Sites</span></h3>
+                    <ul class="item-list item-list-web">
+                        <li><a href="https://dd-career.com/" target="_blank" rel="noreferrer noopener">ディーキャリア</a></li>
+                        <li><a href="https://www.google.com/" target="_blank" rel="noreferrer noopener">Google</a></li>
+                        <li><a href="https://www.yahoo.co.jp/" target="_blank" rel="noreferrer noopener">Yahoo!
                                 Japan</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div id="sample">
-            <div class="main-title">
-                <h2 class="main-title-jp">実装サンプル</h2>
-                <h2 class="main-title-en">Sample</h2>
-            </div>
-            <div class="sub-title">
-                <h3>画像ギャラリー</h3>
-            </div>
+            <h2 class="main-title">実装サンプル<span>Sample</span></h2>
+            <h3 class="sub-title">画像ギャラリー</h3>
             <div class="flex">
                 <div class="gallery">
                     <img class="gallery-element gallery-image" src="images/gallery01.jpg" alt="gallery01">
@@ -127,26 +111,22 @@
                 <div class="gallery">
                     <img class="gallery-element gallery-image" src="images/gallery04.jpg" alt="gallery04">
                     <h4 class="gallery-element gallery-title">ハートの風船</h4>
-                    <p class="gallery-element gallery-caption">青空をバックに、たくさんの色とりどりのハートの風船が浮いています。</p>
+                    <p class="gallery-element gallery-caption gallery-caption-last">青空をバックに、たくさんの色とりどりのハートの風船が浮いています。</p>
                 </div>
             </div>
-            <div class="sub-title">
-                <h3>お問い合わせフォーム</h3>
-            </div>
+            <h3 class="sub-title">お問い合わせフォーム</h3>
             <div class="contact">
-                <p><span class="required">必須</span>名前</p>
+                <div><span class="required">必須</span>名前</div>
                 <input class="input">
-                <p><span class="required">必須</span>メールアドレス</p>
+                <div><span class="required">必須</span>メールアドレス</div>
                 <input class="input">
-                <p><span class="required">必須</span>年齢</p>
+                <div><span class="required">必須</span>年齢</div>
                 <input class="input">
-                <p><span class="required">必須</span>お問い合わせ内容</p>
+                <div><span class="required">必須</span>お問い合わせ内容</div>
                 <input class="input">
                 <input type="submit" class="button send">
             </div>
-            <div class="sub-title">
-                <h3>JavaScript課題</h3>
-            </div>
+            <h3 class="sub-title">JavaScript課題</h3>
             <input type="submit" class="button" id="execution" value="実行！">
         </div>
     </div>
